@@ -5,7 +5,7 @@ const request = require('request-promise-native');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Agent Dashboard', js:'/bundle.index.js', css:'/index.css' });
+  res.render('index', { title: 'Page List', js:'/bundle.index.js', css:'/index.css' });
 });
 
 router.get('/pagelist', (req, res, next) => {
