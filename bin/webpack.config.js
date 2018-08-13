@@ -7,7 +7,7 @@ module.exports = env => ({
 		index: './src/index/index.js',
 		page_view: './src/page_view/index.js',
 	},
-	watch: true,
+	watch: false,
 	watchOptions: {
 		ignored: [/node_modules/, 'public/dist/*']
 	},
