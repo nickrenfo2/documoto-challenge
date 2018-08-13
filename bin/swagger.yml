@@ -1,0 +1,111 @@
+---
+swagger: "2.0"
+info:
+  version: "v1"
+  title: "Documoto Code Test"
+basePath: "/"
+paths:
+  /pages:
+    get:
+      summary: "retrieve all pages"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PageDto"
+
+  '/pages/{id}':
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: ''
+    get:
+      summary: "retrieve a page by id"
+      responses:
+        200:
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PageDto"
+  '/pages/{id}/parts':
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: ''
+    get:
+      summary: "retrieve all parts on a page"
+      responses:
+        200:
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PartDto"
+  /parts:
+    get:
+      summary: "retrieve all parts"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PartDto"
+
+  '/parts/{id}':
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: string
+      description: ''
+    get:
+      summary: "retrieve a part by id"
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: "#/definitions/PartDto"
+
+definitions:
+  PageDto:
+    type: object
+    properties:
+      id:
+        type: string
+      identifier:
+        type: string
+      name:
+        $ref: "#/definitions/TranslationMap"
+      tags:
+        $ref: "#/definitions/TagMap"
+  PartDto:
+    type: object
+    properties:
+      id:
+        type: string
+      partNumber:
+        type: string
+      name:
+        $ref: "#/definitions/TranslationMap"
+      tags:
+        $ref: "#/definitions/TagMap"
+  TranslationMap:
+    type: object
+    additionalProperties:
+      type: string
+  TagMap:
+    type: object
+    additionalProperties:
+      $ref: "#/definitions/StringArray"
+  StringArray:
+    type: array
+    items:
+      type: string
