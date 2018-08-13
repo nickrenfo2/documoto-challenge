@@ -1,11 +1,11 @@
 # Installing
 Clone the repository to your project directory.
 
-run `npm install` to install dependencies.
+Then, run `npm install` to install dependencies.
 
 After dependencies are installed, run `npm build` to generate compiled files.
 
-run `npm start` to start the server. Visit `localhost:5001` to see the index page (Page List).
+Finally, run `npm start` to start the server. Visit `localhost:5001` to see the index page (Page List).
 
 
 ## Configuring the Api Url
